@@ -55,6 +55,9 @@
     <Filter Include="01. Core\03. Camera">
       <UniqueIdentifier>{96790041-a4be-46b5-94c7-eeb4a2cc5ac2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Core\04. Input">
+      <UniqueIdentifier>{676fd404-563f-4b79-a9aa-c638a082b87c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -113,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="Core\Camera.cpp">
       <Filter>01. Core\03. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Input.cpp">
+      <Filter>01. Core\04. Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="Types.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Input.h">
+      <Filter>01. Core\04. Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
