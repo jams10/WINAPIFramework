@@ -34,6 +34,7 @@ protected:
 	_SIZE			m_tSize;
 	POSITION		m_tPivot;
 	class CTexture* m_pTexture;
+	list<class CCollider*> m_ColliderList;
 
 public:
 	float GetLeft() const

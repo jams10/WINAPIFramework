@@ -6,6 +6,7 @@
 #include "Resources/Texture.h"
 #include "Core/Camera.h"
 #include "Core/Input.h"
+#include "Collider/CollisionManager.h"
 
 CCore* CCore::m_pInst;
 bool CCore::m_bLoop = true;
@@ -19,6 +20,7 @@ CCore::CCore()
 CCore::~CCore()
 {
     DESTROY_SINGLE( CSceneManager );
+    DESTROY_SINGLE( CCollisionManager );
     DESTROY_SINGLE( CInput );
     DESTROY_SINGLE( CCamera );
     DESTROY_SINGLE( CResourcesManager );

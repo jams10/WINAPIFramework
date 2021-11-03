@@ -5,6 +5,7 @@
 #include "../Resources//ResourcesManager.h"
 #include "../Resources/Texture.h"
 #include "../Core/Camera.h"
+#include "../Collider/Collider.h"
 
 list<CObject*> CObject::m_ObjList;
 
@@ -22,10 +23,23 @@ CObject::CObject( const CObject& obj )
 	{
 		m_pTexture->AddRef();
 	}
+
+	m_ColliderList.clear();
+
+	list<CCollider*>::const_iterator iter;
+	list<CCollider*>::const_iterator iterEnd = m_ColliderList.end();
+
+	for( iter = obj.m_ColliderList.begin(); iter != iterEnd; ++iter )
+	{
+		CCollider* pColl = (*iter)->Clone();
+
+		m_ColliderList.push_back( pColl );
+	}
 }
 
 CObject::~CObject()
 {
+	Safe_Release_VecList( m_ColliderList );
 	SAFE_RELEASE( m_pTexture );
 }
 

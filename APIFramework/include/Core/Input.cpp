@@ -53,13 +53,12 @@ void CInput::Update( float fDeltaTime )
 			if( iPushCount == iter->second->vecKey.size() )
 			{
 				if( iter->second->bDown == false && iter->second->bPress == false )
-					iter->second->bDown = true;
-				
-				else if( iter->second->bDown == true && iter->second->bPress == false )
 				{
-					iter->second->bDown = false;
+					iter->second->bDown = true;
 					iter->second->bPress = true;
-				}
+				}			
+				else if( iter->second->bDown == true )
+					iter->second->bDown = false;
 			}
 			else
 			{
