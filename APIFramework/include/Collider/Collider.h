@@ -13,11 +13,23 @@ protected:
 
 protected:
 	COLLIDER_TYPE	m_eCollType;
+	class CObject*	m_pObj;
 
 public:
 	COLLIDER_TYPE GetColliderType()const
 	{
 		return m_eCollType;
+	}
+
+	class CObject* GetObj() const
+	{
+		return m_pObj;
+	}
+
+public:
+	void SetObj( class CObject* pObj )
+	{
+		m_pObj = pObj;
 	}
 
 public:

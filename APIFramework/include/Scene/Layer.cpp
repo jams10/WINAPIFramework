@@ -1,5 +1,6 @@
 #include "Layer.h"
 #include "../Object/Object.h"
+#include "../Collider/CollisionManager.h"
 
 CLayer::CLayer()
 	:
@@ -133,8 +134,6 @@ void CLayer::Collision( float fDeltaTime )
 			continue;
 		}
 
-		(*iter)->Collision( fDeltaTime );
-
 		if( !(*iter)->GetLife() )
 		{
 			CObject::EraseObj( *iter );
@@ -144,7 +143,10 @@ void CLayer::Collision( float fDeltaTime )
 		}
 
 		else
+		{
+			GET_SINGLE( CCollisionManager )->AddObject( *iter );
 			++iter;
+		}
 	}
 }
 

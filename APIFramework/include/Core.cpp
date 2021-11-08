@@ -147,6 +147,8 @@ int CCore::LateUpdate( float fDeltaTime )
 void CCore::Collision( float fDeltaTime )
 {
     GET_SINGLE( CSceneManager )->Collision( fDeltaTime );
+
+    GET_SINGLE( CCollisionManager )->Collision( fDeltaTime );
 }
 
 void CCore::Render( float fDeltaTime )

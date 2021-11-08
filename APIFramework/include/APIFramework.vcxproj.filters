@@ -130,7 +130,7 @@
       <Filter>05. Collider</Filter>
     </ClCompile>
     <ClCompile Include="Collider\CollisionManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>05. Collider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +213,7 @@
       <Filter>05. Collider</Filter>
     </ClInclude>
     <ClInclude Include="Collider\CollisionManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>05. Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

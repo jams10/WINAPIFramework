@@ -1,4 +1,5 @@
 #include "Collider.h"
+#include "../Object/Object.h"
 
 CCollider::CCollider()
 {

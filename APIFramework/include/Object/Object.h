@@ -37,6 +37,31 @@ protected:
 	list<class CCollider*> m_ColliderList;
 
 public:
+	template<typename T>
+	T* AddCollider( const string& strTag )
+	{
+		T* pCollider = new T;
+
+		pCollider->SetObj( this );
+
+		if( !pCollider->Init() )
+		{
+			SAFE_RELEASE( pCollider );
+			return nullptr;
+		}
+
+		pCollider->AddRef();
+		m_ColliderList.push_back( pCollider );
+
+		return pCollider;
+	}
+
+	bool CheckCollider()
+	{
+		return !m_ColliderList.empty();
+	}
+
+public:
 	float GetLeft() const
 	{
 		return m_tPos.x - m_tSize.x * m_tPivot.x;

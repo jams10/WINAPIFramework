@@ -1,6 +1,7 @@
 #include "Minion.h"
 #include "../Core.h"
 #include "../Resources/Texture.h"
+#include "../Collider/ColliderRect.h"
 
 CMinion::CMinion()
 	:
@@ -34,6 +35,12 @@ bool CMinion::Init()
 	m_pTexture->SetColorKey( RGB( 255, 0, 255 ) );
 
 	m_eDir = MD_FRONT;
+
+	CColliderRect* pRC = AddCollider<CColliderRect>( "Minion" );
+
+	pRC->SetRect( -50.f, -50.f, 50.f, 50.f );
+
+	SAFE_RELEASE( pRC );
 
 	return true;
 }
