@@ -27,7 +27,7 @@ CObject::CObject( const CObject& obj )
 	m_ColliderList.clear();
 
 	list<CCollider*>::const_iterator iter;
-	list<CCollider*>::const_iterator iterEnd = m_ColliderList.end();
+	list<CCollider*>::const_iterator iterEnd = obj.m_ColliderList.end();
 
 	for( iter = obj.m_ColliderList.begin(); iter != iterEnd; ++iter )
 	{
